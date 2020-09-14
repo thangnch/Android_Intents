@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ứng dụng FITHOU</string>
+    <string name="login_title_vn">Đăng nhập</string>
+    <string name="login_title_en">Login</string>
+</resources>

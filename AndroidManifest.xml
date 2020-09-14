@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".SendSMSN">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+        <activity android:name=".Noti_Display" />
+        <activity android:name=".Noti_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CallPhone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActivityA">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActivityB">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OpenWeb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".ReceiveSMS"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.READ_SMS">
+            <intent-filter android:priority="999999999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+
+        <receiver
+            android:name=".ReceiveCall"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+
+
+
+        <activity android:name=".SendSMS">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
